@@ -1,3 +1,5 @@
+{% load static %} {% load django_bootstrap5 %} {% bootstrap_css %} 
+{%bootstrap_javascript %} {% bootstrap_messages %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,13 +9,37 @@
     <title>login</title>
 </head>
 <body>
+
+    {% block content %} {% endblock content %}
     <h1>
         login
     </h1>
 
-    <form method="POST" autocomplete="off">
-        {% csrf_token %} {{Login.as_p}}
-        <input type="submit" value="Submit" />
-      </form>
+      <section class="">
+        <!-- <div
+          class="px-4 py-5 px-md-5 text-center text-lg-start"
+          style="background-color: hsl(0, 0%, 96%)"
+        > -->
+            <div class=" px-4 col-lg-6 mb-5 mb-lg-0">
+                <div class="card">
+                  <div class="card-body py-5 px-md-5">
+                    <form method="POST">
+                      {% csrf_token %} {% bootstrap_form Login %}
+                      <!-- Submit button -->
+                      <button
+                        type="submit"
+                        class="btn btn-primary btn-block mb-4"
+                      >
+                        Login
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+      </section>
+
+
+
 </body>
 </html>
