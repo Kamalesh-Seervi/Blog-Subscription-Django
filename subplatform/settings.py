@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'account',
     'django_bootstrap5',
+    'writer',
+    'client',
 ]
 
 AUTH_USER_MODEL='account.CustomUser'
