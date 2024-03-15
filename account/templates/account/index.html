@@ -1,112 +1,77 @@
 {% load static %}
 
 <!DOCTYPE html>
-
 <html lang="en">
-  <head>
-    <title>Edenthought</title>
-
+<head>
+    <title>Fury's Blog</title>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" href="https://bootswatch.com/5/lux/bootstrap.min.css" />
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <style>
+        /* Additional CSS styles for improved UI */
+        body {
+            background-color: #f8f9fa;
+        }
+        .navbar {
+            background-color: #343a40 !important;
+        }
+        .navbar-brand {
+            color: #ffffff !important;
+            font-size: 1.5rem;
+        }
+        .navbar-nav .nav-item .btn {
+            margin: 0 5px;
+        }
+        .navbar-btn {
+            color: #ffffff !important;
+            background-color: #6c757d !important;
+        }
+        .navbar-btn:hover {
+            background-color: #495057 !important;
+        }
+        .hero-content {
+            padding: 50px 0;
+            background-color: #f8f9fa;
+        }
+        .hero-content h5 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #495057;
+        }
+        .hero-content p {
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
 
-    <meta
-      name="viewport"
-      content="width-device-width, initial-scale=1, maximum-scale=1"
-    />
-
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://bootswatch.com/5/lux/bootstrap.min.css"
-    />
-
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="{% static 'css/styles.css' %}"
-    />
-  </head>
-
-  <nav
-    class="navbar navbar-expand-lg navbar-light bg-black justify-content-center"
-  >
-    <a class="navbar-brand main-heading text-white"> &nbsp; Edenthought </a>
-
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-toggle="collapse"
-      data-target="#navbarNavDropdown"
-      aria-controls="navbarNavDropdown"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-center">
+    <a class="navbar-brand main-heading" href="#">Fury's Blog</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
     </button>
-
-    <div class="collapse navbar-collapse text-center" id="navbarNavDropdown">
-      <ul class="navbar-nav ms-auto">
-        &nbsp; &nbsp; &nbsp;
-
-        <li class="nav-item">
-          <a
-            class="btn btn-secondary navbar-btn"
-            type="button"
-            href="{% url 'register' %}"
-            >Register</a
-          >
-        </li>
-
-        &nbsp; &nbsp; &nbsp;
-
-        <li class="nav-item">
-          <a
-            class="btn btn-secondary navbar-btn"
-            type="button"
-            href="{% url 'login' %}"
-            >Login</a
-          >
-        </li>
-
-        &nbsp; &nbsp; &nbsp;
-      </ul>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+                <a class="btn navbar-btn" href="{% url 'register' %}">Register</a>
+            </li>
+            <li class="nav-item">
+                <a class="btn navbar-btn" href="{% url 'login' %}">Login</a>
+            </li>
+        </ul>
     </div>
-  </nav>
+</nav>
 
-  <body>
-    <br />
-    <br />
+<div class="hero-content text-center">
+    <h5>Edenthought.... Subscribe for the most informative articles on the net!</h5>
+    <p>Browse through our extensive collection of carefully curated content.</p>
+    <a class="btn btn-success" href="{% url 'register' %}"><i class="fa fa-angle-right" aria-hidden="true"></i> &nbsp; Get started today</a>
+</div>
 
-    <div class="text-center">
-      <h5>
-        Edenthought.... Subscribe for the most informative articles on the net!
-      </h5>
-
-      <br />
-
-      <p>
-        Browse through our extensive collection of carefully curated content.
-      </p>
-
-      <br />
-
-      <a class="btn btn-success" type="button" href="{% url '' %}">
-        <i class="fa fa-angle-right" aria-hidden="true"></i> &nbsp; Get started
-        today</a
-      >
-    </div>
-  </body>
-
-  <script
-    src="https://code.jquery.com/jquery-3.7.1.min.js"
-    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-    crossorigin="anonymous"
-  ></script>
-
-  <script
-    src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-    crossorigin="anonymous"
-  ></script>
-
-  <script src="{% static '' %}"></script>
+<!-- Bootstrap and jQuery JS files -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script src="{% static '' %}"></script>
+</body>
 </html>

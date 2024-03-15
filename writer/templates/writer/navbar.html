@@ -2,70 +2,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Writer's BlogPage</title>
-    <link
-    rel="stylesheet"
-    type="text/css"
-    href="https://bootswatch.com/5/lux/bootstrap.min.css"
-  />
-
-  <link
-    rel="stylesheet"
-    type="text/css"
-    href="{% static 'css/styles.css' %}"
-  />
-
+    <title>Fury's Blog</title>
+    <link rel="stylesheet" href="https://bootswatch.com/5/lux/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <style>
+        /* Additional CSS styles for improved UI */
+        body {
+            background-color: #f8f9fa;
+        }
+        .navbar {
+            background-color: #343a40 !important;
+        }
+        .navbar-brand {
+            color: #ffffff !important;
+            font-size: 1.5rem;
+        }
+        .navbar-nav .nav-item .btn {
+            margin: 0 5px;
+        }
+        .navbar-btn {
+            color: #ffffff !important;
+            background-color: #6c757d !important;
+        }
+        .navbar-btn:hover {
+            background-color: #495057 !important;
+        }
+    </style>
 </head>
 <body>
-    <nav
-    class="navbar navbar-expand-lg navbar-light bg-black justify-content-center"
-  >
-    <a class="navbar-brand main-heading text-white"> &nbsp; Edenthought </a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-center">
+        <a class="navbar-brand main-heading" href="#">Fury's Blog</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="btn navbar-btn" href="{% url 'writer_dashboard' %}">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn navbar-btn" href="#">My Publish</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn navbar-btn" href="#">Create Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn navbar-btn" href="#">Account</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn navbar-btn" href="{% url 'logout' %}">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-toggle="collapse"
-      data-target="#navbarNavDropdown"
-      aria-controls="navbarNavDropdown"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse text-center" id="navbarNavDropdown">
-      <ul class="navbar-nav ms-auto">
-        &nbsp; &nbsp; &nbsp;
-
-        <li class="nav-item">
-          <a
-            class="btn btn-secondary navbar-btn"
-            type="button"
-            href="{% url 'register' %}"
-            >Register</a
-          >
-        </li>
-
-        &nbsp; &nbsp; &nbsp;
-
-        <li class="nav-item">
-          <a
-            class="btn btn-secondary navbar-btn"
-            type="button"
-            href="{% url 'login' %}"
-            >Login</a
-          >
-        </li>
-
-        &nbsp; &nbsp; &nbsp;
-      </ul>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-8">
+                {% block content %}
+                {% endblock %}
+            </div>
+            <div class="col-md-4">
+                <!-- Sidebar Content Goes Here -->
+            </div>
+        </div>
     </div>
-  </nav>
 
-{% block content %}
-
-{% endblock %}
-
+    <!-- Bootstrap and jQuery JS files -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
